@@ -110,7 +110,7 @@ class _CardDetailsState extends State<CardDetails> {
                                       fontSize: 14),
                                 ),
                                 Text(
-                                  'CCV',
+                                  'CVV',
                                   style: TextStyle(
                                       fontWeight: FontWeight.w500,
                                       color: Colors.white60,
@@ -245,7 +245,7 @@ class _CardDetailsState extends State<CardDetails> {
                         height: 10,
                       ),
                       Text(
-                        "CCV :",
+                        "CVV :",
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.w700),
                       ),
@@ -254,7 +254,7 @@ class _CardDetailsState extends State<CardDetails> {
                         child: TextFormField(
                           validator: (String args) {
                             if (args.length == 0) {
-                              return "CCV can't be empty";
+                              return "CVV can't be empty";
                             } else if (args.length != 3) {
                               return "Enter a valid number";
                             } else {
@@ -273,7 +273,7 @@ class _CardDetailsState extends State<CardDetails> {
                                   color: Colors.grey),
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10)),
-                              hintText: "CCV",
+                              hintText: "CVV",
                               prefixIcon: Icon(Icons.branding_watermark)),
                         ),
                       ),
@@ -281,7 +281,7 @@ class _CardDetailsState extends State<CardDetails> {
                         height: 10,
                       ),
                       Text(
-                        "Expirey date :",
+                        "Expiry date :",
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.w700),
                       ),
@@ -328,7 +328,6 @@ class _CardDetailsState extends State<CardDetails> {
         color: Colors.blueAccent,
         child: FlatButton(
           onPressed: () {
-            //key.currentState.validate();
             setState(() {
               if (key.currentState.validate() == true) {
                 return carddata(context);
@@ -353,14 +352,15 @@ class _CardDetailsState extends State<CardDetails> {
     String ccvnum = ccv.text;
     String expdate = exp.text;
     Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => CardDataVerify(
-            accnum: accnum,
-            accname: accname,
-            ccvnum: ccvnum,
-            expdate: expdate,
-          ),
-        ));
+      context,
+      MaterialPageRoute(
+        builder: (context) => CardDataVerify(
+          accnum: accnum,
+          accname: accname,
+          ccvnum: ccvnum,
+          expdate: expdate,
+        ),
+      ),
+    );
   }
 }

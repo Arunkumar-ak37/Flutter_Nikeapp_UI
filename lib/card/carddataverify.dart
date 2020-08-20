@@ -127,7 +127,7 @@ class CardDataVerify extends StatelessWidget {
                                       fontSize: 14),
                                 ),
                                 Text(
-                                  'CCV',
+                                  'CVV',
                                   style: TextStyle(
                                       fontWeight: FontWeight.w500,
                                       color: Colors.white60,
